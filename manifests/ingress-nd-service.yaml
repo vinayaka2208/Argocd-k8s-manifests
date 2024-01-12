@@ -1,4 +1,4 @@
-apiVersion: networking.io/v1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress-basic
@@ -14,7 +14,7 @@ spec:
 
 ---
 
-apiVersion: networking.io/v1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress-cpr # context path routing example
