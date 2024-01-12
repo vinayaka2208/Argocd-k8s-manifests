@@ -8,3 +8,36 @@ spec:
     name: myapp-service
     port:
       number: 8080
+
+
+---
+
+apiVersion: networking.io/v1
+kind: Ingress
+metadata:
+  name: ingress-cpr # context path routing example
+spec:
+  rules:
+    -http:
+      paths:
+        - path: /app1     #request comes to app1 it should go to app1 NodePort service
+          pathType: Prefix
+          defaultBackend: 
+            service:
+              name: app1 
+              port:
+                number: 80 
+        - path: /app2         #request comes to app2 it should go to app2 NodePort service
+          pathType: Prefix
+          defaultBackend: 
+            service:
+              name: app2
+              port:
+                number: 80 
+        - path: /        #request comes to app3 it should go to app2 NodePort service
+          pathType: Prefix
+          defaultBackend: 
+            service:
+              name: app3
+              port:
+                number: 80 
