@@ -1,0 +1,12 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-basic
+  annotations:
+    kubernetes.io/ingress.class: "gce" #create external Load Balancer
+spec:
+  defaultBackend:
+   service:
+    name: myapp1-nginx-service
+    port:
+      number: 80
