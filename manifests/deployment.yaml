@@ -17,3 +17,17 @@ spec:
         image: public.ecr.aws/g5l2y4q8/public-practice:22
         ports:
         - containerPort: 8080
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp-service
+spec:
+  selector:
+    app: myapp
+  type: NodePort 
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
