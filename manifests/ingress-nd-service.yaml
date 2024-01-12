@@ -38,7 +38,7 @@ spec:
               name: app2
               port:
                 number: 80 
-        - path: /        #request comes to app3 it should go to app2 NodePort service
+        - path: /        #request comes to app3 it should go to app3 NodePort service
           pathType: Prefix
           defaultBackend: 
             service:
