@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: ingress-basic
   annotations:
-    kubernetes.io/ingres.class: "gce" 
+    kubernetes.io/ingress.class: "gce" 
 spec:
   defaultBackend:
    service:
@@ -19,7 +19,7 @@ kind: Ingress
 metadata:
   name: ingress-cpr # context path routing example
   annotations:
-    kubernetes.io/ingres.class: "gce"    #gce means it will create external Load Balancer and "gce-internal means it will create internal LB"
+    kubernetes.io/ingress.class: "gce"    #gce means it will create external Load Balancer and "gce-internal means it will create internal LB"
 spec:
   rules:
     -http:
